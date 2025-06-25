@@ -41,7 +41,6 @@ jobs:
             version: latest
       - run: |
           jf rt ping
-          jf docker login
       # This command adds a new server configuration to the JFrog CLI   
       - name: Validate JF CLI Version
         run: |
@@ -51,7 +50,9 @@ jobs:
       - name: Validate Connectivity to JFrog Platform
         run: |
           jf rt ping
-      
+      - name: Validate Connectivity to Docker
+        run: |
+          jf docker login      
       # Configure JFrog CLI for NPM 
       - run: |
           jf npmc --repo-deploy=${{ env.NPM_VIRTUAL }} --repo-resolve=${{ env.NPM_VIRTUAL }}
