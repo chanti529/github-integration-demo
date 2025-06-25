@@ -75,7 +75,7 @@ jobs:
         with:
           registry: artifactorys.jfrog.io
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ steps.setup-cli.outputs.oidc-token }}
+          password: ${{ secrets.JF_ACCESS_TOKEN }}
       
       - name: Build and tag Docker image
         uses: docker/build-push-action@v4
