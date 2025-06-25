@@ -41,6 +41,7 @@ jobs:
             version: latest
       - run: |
           jf rt ping
+          jf docker login
       # This command adds a new server configuration to the JFrog CLI   
       - name: Validate JF CLI Version
         run: |
